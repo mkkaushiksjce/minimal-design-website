@@ -1,0 +1,46 @@
+@import (reference) './file_imports.less';
+
+@logo-height: 46px;
+@contact-circle-dimensions: 35px;
+
+#companyWebsiteWrap {
+    .footer-wrap {
+        padding: @spacing80 0;
+        width: 100%;
+        background: @footer-bg-color;
+    }
+    .footer-logo-wrap {
+        background: url("../common/images/logo/logo_lite.png");
+        .bg-image-contain(center);
+        width: 100%;
+        height: @logo-height;
+        width: @spacing60;
+        cursor: pointer;
+        position: relative;
+        left: 50%;
+        .translateX(-50%);
+    }
+    .social-elm-wrap{
+        margin-top: @spacing50;
+    }
+    .social-wrap{
+        text-align: center;
+    }
+    .social-center-elm{
+        position: relative;
+        left: 50%;
+        .translateX(-50%);
+    }
+    .social-btn{
+        height: @contact-circle-dimensions;
+        width: @contact-circle-dimensions;
+        border-radius: 50%;
+        background: @social-black;
+        text-align: center;
+        line-height: @contact-circle-dimensions;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+        color: @white;
+        vertical-align: middle;
+        margin-right: @spacing20;
+    }
+}
