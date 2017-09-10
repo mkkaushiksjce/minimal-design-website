@@ -14,7 +14,7 @@ $(document).ready(function () {
         }, scrollDelay);
     });
 
-    $("#contact").click(function () {
+    $("#contact, #contactBtn").click(function () {
         $("html, body").animate({
             scrollTop: $(".contactus-section-wrap").offset().top
         }, scrollDelay);

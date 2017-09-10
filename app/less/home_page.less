@@ -28,7 +28,7 @@
     .nav-components-wrap{
         line-height: @spacing60;
         .nav-component{
-            .font-generic(@fs14, 'sans-bold', @white);
+            .font-generic(@fs14, 'sans-bold', rgba(255,255,255,.65));
             display: inline-block;
             cursor: pointer;
             &:not(:last-child){
@@ -61,6 +61,15 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             display: inline-block;
         }
+    }
+    #contactBtn{
+        width: 200px;
+        background: @purchase-button-red;
+        margin-top: @spacing50;
+        display: block;
+        position: relative;
+        left: 50%;
+        .translateX(-50%);
     }
 }
 
