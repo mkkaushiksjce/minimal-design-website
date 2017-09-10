@@ -78,6 +78,7 @@ function compileLess() {
             .pipe($.less({
                 paths: [path.join(__dirname, 'app')]
             }))
+            .on('error', swallowError)
             .pipe($.concat(lessConfig.destFile))
             .pipe(gulp.dest(BUILDPATH + lessConfig.dest))
             .pipe($.if(argv.production, $.csso()))
@@ -196,6 +197,13 @@ function productionDump() {
     });
     return 'productionDump';
 }
+
+function swallowError(error){
+    // Print the error in console
+    console.log(error.toString());
+    this.emit('end');
+}
+
 gulp.task('kill', function () {
     if (config.ENVIRONMENT !== "local") {
         process.exit(0);
