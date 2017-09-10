@@ -35,7 +35,9 @@ var lessConfig = {
         WORKPATH + 'less/font.less',
         WORKPATH + 'less/mixins.less',
         WORKPATH + 'less/common.less',
-        WORKPATH + "less/home_page.less"
+        WORKPATH + "less/home_page.less",
+        WORKPATH + "less/contactus.less",
+        WORKPATH + "less/services.less"
     ],
     dest: "css",
     destFile: "main.css"
