@@ -4,6 +4,11 @@
 @contact-circle-dimensions: 35px;
 
 #companyWebsiteWrap {
+    .demarcation{
+        width: 100%;
+        height: @spacing20;
+        background: @purchase-button-red;
+    }
     .footer-wrap {
         padding: @spacing80 0;
         width: 100%;
@@ -51,5 +56,13 @@
         letter-spacing: 0.4px;
         height: @spacing50;
         line-height: @spacing50;
+    }
+}
+
+@media(max-width: 767px){
+    #companyWebsiteWrap {
+        .demarcation{
+            height: @spacing10;
+        }
     }
 }
