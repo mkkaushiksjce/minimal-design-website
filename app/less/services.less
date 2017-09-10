@@ -48,8 +48,21 @@
             text-transform: capitalize;
         }
         .service-description-subtile{
-            .font-generic(@fs14, 'sans-regular', @white);
+            .font-generic(@fs13, 'sans-regular', @services-description-color);
             line-height: @services-line-height;
+        }
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+    #companyWebsiteWrap {
+        .services-section-wrap {
+            .service{
+                width: 45%;
+            }
+            .service-description-subtile{
+                font-size: @fs13;
+            }
         }
     }
 }
