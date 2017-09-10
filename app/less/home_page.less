@@ -43,6 +43,10 @@
         max-width: @viewport-width;
         margin: 0 auto;
     }
+    #customViewport{
+        max-width: none;
+        padding: 0 @spacing50;
+    }
     .title-wrap{
         position: absolute;
         top: 45%;
@@ -99,6 +103,14 @@
             }
             .subtitle{
                 font-size: @fs12;
+            }
+        }
+        #customViewport{
+            padding: 0;
+        }
+        .nav-components-wrap {
+            .nav-component:not(:last-child){
+                margin-right: @spacing10;
             }
         }
     }
