@@ -1,2 +1,2 @@
-# Minimal design website
+# Minimal design website 
 Minimal design website.
