@@ -16,6 +16,8 @@
     .navbar-wrap {
         height: @navbar-height; 
         padding: @spacing20 0;
+        background-color: @theme-color;
+        opacity: 0.8;
         .logo-wrap {
             background: url("../common/images/logo/logo_lite.png");
             .bg-image-contain(left);
@@ -49,11 +51,12 @@
     }
     .title-wrap{
         position: absolute;
-        top: 45%;
+        top: 40%;
         left: 50%;
         .translate(-50%, -50%);
         width: 100%;
         text-align: center;
+        z-index: 0;
         .title{
             .font-generic(@fs40, 'sans-bold', @white);
             margin: @spacing20 0;
@@ -107,6 +110,9 @@
         }
         #customViewport{
             padding: 0;
+        }
+        .navbar-wrap {
+            padding: @spacing20 @spacing10;
         }
         .nav-components-wrap {
             .nav-component:not(:last-child){
