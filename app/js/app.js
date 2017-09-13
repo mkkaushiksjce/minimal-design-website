@@ -24,18 +24,18 @@ $(document).ready(function () {
 
         currScroll = $(this).scrollTop();
 
-        if (currScroll > lastScrollTop) {
-            scrollDirection = 'bottom';
-            offset = $(".services-section-wrap").offset().top - servicePadding;
-            //  offset = $(".services-section-wrap").offset().top - servicePadding - $(".navbar-wrap").height();
-        } else {
-            scrollDirection = 'top';
-            offset = $(".services-section-wrap").offset().top - servicePadding;
-        }
-        lastScrollTop = currScroll;
+        // if (currScroll > lastScrollTop) {
+        //     scrollDirection = 'bottom';
+        //     offset = $(".services-section-wrap").offset().top - servicePadding;
+        //     //  offset = $(".services-section-wrap").offset().top - servicePadding - $(".navbar-wrap").height();
+        // } else {
+        //     scrollDirection = 'top';
+        //     offset = $(".services-section-wrap").offset().top - servicePadding;
+        // }
+        // lastScrollTop = currScroll;
 
         $("html, body").animate({
-            scrollTop: offset
+            scrollTop: $(".services-section-wrap").offset().top + $(".navbar-wrap").height() - servicePadding
         }, scrollDelay);
     });
 
