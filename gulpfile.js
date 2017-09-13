@@ -39,7 +39,8 @@ var lessConfig = {
         WORKPATH + "less/contactus.less",
         WORKPATH + "less/services.less",
         WORKPATH + "less/footer.less",
-        WORKPATH + "less/carousel.less"
+        WORKPATH + "less/carousel.less",
+        WORKPATH + "less/loader.less"
     ],
     dest: "css",
     destFile: "main.css"
