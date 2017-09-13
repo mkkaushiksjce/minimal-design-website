@@ -2,6 +2,9 @@
 
 @logo-height: 46px;
 @contact-circle-dimensions: 35px;
+@logo-width-mobile: 110px;
+@logo-width-desktop: 150px;
+
 
 #companyWebsiteWrap {
     .demarcation{
@@ -13,13 +16,15 @@
         padding: @spacing80 0;
         width: 100%;
         background: @footer-bg-color;
+        opacity: 0.85;
     }
     .footer-logo-wrap {
-        background: url("../common/images/logo/logo_lite.png");
+        background: url("../common/images/logo/last_print.png");
         .bg-image-contain(center);
         width: 100%;
         height: @logo-height;
-        width: @spacing60;
+        width: @logo-width-desktop;
+        opacity: 1;
         cursor: pointer;
         position: relative;
         left: 50%;
@@ -51,7 +56,7 @@
     }
     .rights-reserved{
         background: @rights-bg;
-        .font-generic(@fs12, 'sans-regular', rgba(255, 255, 255, 0.3));
+        .font-generic(@fs12, 'sans-regular', @white);
         text-align: center;
         letter-spacing: 0.4px;
         height: @spacing50;

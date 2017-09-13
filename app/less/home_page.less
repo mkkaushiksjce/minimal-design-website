@@ -3,6 +3,8 @@
 @logo-height: 46px;
 @logo-margin: 7px;
 @navbar-height: 80px;
+@logo-width-mobile: 110px;
+@logo-width-desktop: 150px;
 
 #companyWebsiteWrap {
     .home-section-wrap {
@@ -23,6 +25,8 @@
         min-height: 100vh;
         height: 100%;
         background-color :rgba(21,21,21,.8);
+        // background-color : @theme-color;
+        // opacity: 0.8;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -37,10 +41,10 @@
         z-index: 5;
 
         .logo-wrap {
-            background: url("../common/images/logo/logo_lite.png");
+            background: url("../common/images/logo/last_print.png");
             .bg-image-contain(left);
             height: @logo-height;
-            width: @spacing60;
+            width: @spacing10*15;
             margin: @logo-margin 0;
             cursor: pointer;
         }
@@ -48,7 +52,7 @@
     .nav-components-wrap{
         line-height: @spacing60;
         .nav-component{
-            .font-generic(@fs14, 'sans-bold', rgba(255,255,255,.65));
+            .font-generic(@fs14, 'sans-bold', @white);
             display: inline-block;
             cursor: pointer;
             &:not(:last-child){
@@ -131,6 +135,9 @@
         }
         .navbar-wrap {
             padding: 0 @spacing10;
+            .logo-wrap{
+                width: @logo-width-mobile;
+            }
         }
         .nav-components-wrap {
             .nav-component{
