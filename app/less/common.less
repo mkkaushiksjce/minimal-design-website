@@ -241,7 +241,7 @@ textarea:focus{
 	outline: none;
 }
 
-.button{
+.button, .ajax-loader-wrap{
     background: @theme-color;
     height: @spacing40;
     line-height: @spacing40;
@@ -252,6 +252,7 @@ textarea:focus{
     cursor: pointer;
     .font-generic(@fs14, 'sans-regular', @white);
     .box-shadow(0px 3px 4.7px 0.3px rgba(0,0,0,0.24));
+    min-width: 120px;
 }
 
 .header-fixed{

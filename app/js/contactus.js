@@ -13,6 +13,7 @@ var validationMap = {
 };
 
 var checkboxChecked = false;
+var messageTimeDelay = 5000;
 
 $(document).ready(function () {
 
@@ -47,13 +48,16 @@ $(document).ready(function () {
                 name: $.trim(name),
                 subject: $.trim(subject),
                 message: $.trim(message)
-            }
+            };
+            displayLoader();
             apiService.sendMail(params).then(function (successData) {
-                removeErrorClass(formMap);
-                console.log("successData", successData);
+                removeLoader();
+                clearFields(formMap);
+                handleSuccess(successData);
             }, function (errorData) {
-                removeErrorClass(formMap);
-                console.log("errorData", errorData);
+                removeLoader();
+                clearFields(formMap);
+                handleError(errorData);
             });
         }
     });
@@ -79,6 +83,15 @@ function removeErrorClass(formMap) {
     }
 }
 
+function clearFields(formMap){
+    for (var key in formMap) {
+        var currElm = "#" + formMap[key];
+        var currElmDom = $(currElm);
+        currElmDom.val("");
+    }
+    uncheckAll("captcha-wrap");
+}
+
 function checkboxCheked(){
     return checkboxChecked;
 }
@@ -91,6 +104,43 @@ function validateEmail(email){
 function validateSpace(string){
     var stringRegex = /^\S+$/;
     return stringRegex.test(string)
+}
+
+function handleSuccess(successData){
+    removeErrorClass(formMap);
+    $(".ajax-message").html(successData.message).css('display', 'block');
+    window.setTimeout(function(){
+        $(".ajax-message").css('display', 'none');
+    }, messageTimeDelay);
+}
+
+function handleError(errorData){
+    removeErrorClass(formMap);
+    var errorMessage = "Please try after some time"
+    $(".ajax-message").html(errorMessage).css('display', 'block');
+    window.setTimeout(function(){
+        $(".ajax-message").css('display', 'none');
+    }, messageTimeDelay);
+}
+
+function displayLoader(){
+    $(".ajax-loader").css('display', 'block');
+    
+}
+
+function removeLoader(){
+    $(".ajax-loader").css('display', 'none');
+    
+}
+
+function uncheckAll(divid) {
+    var checks = document.querySelectorAll('.' + divid + ' input[type="checkbox"]');
+    for(var i =0; i< checks.length;i++){
+        var check = checks[i];
+        if(!check.disabled){
+            check.checked = false;
+        }
+    }
 }
 
 $(".styled-checkbox").click(function() {

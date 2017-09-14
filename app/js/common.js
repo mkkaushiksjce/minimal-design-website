@@ -22,7 +22,7 @@ var commonFunctions = {
             url: apiUrl,
             data: JSON.stringify(paramData),
             success: function (successData) {
-                promiseObj.resolve(successData.data);
+                promiseObj.resolve(successData);
             },
             error: function (errorData) {
                 promiseObj.reject(errorData);

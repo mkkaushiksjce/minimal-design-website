@@ -3,6 +3,7 @@
 @contact-circle-dimensions: 35px;
 @text-area-height: 120px;
 @contact-min-height: 550px;
+@contact-tablet-height: 580px;
 
 #companyWebsiteWrap {
 
@@ -103,6 +104,32 @@
                 .font-generic(@fs16, 'sans-bold', @contact-elm-color);
             }
         }
+        .ajax-message{
+            background: @theme-color;
+            height: @spacing40;
+            line-height: @spacing40;
+            display: none;
+            width: 100%;
+            margin-top: @spacing20;
+            padding: 0 @spacing10;
+            .font-generic(@fs16, 'sans-regular', @white);
+            text-align: center;
+        }
+        .ajax-loader-wrap{
+            display: block;
+            width: 120px;
+        }
+        .ajax-loader{
+            background: url("../common/images/loader/loader.gif");
+            background-repeat: no-repeat;
+            height: @spacing35;
+            width: @spacing35;
+            display: inline-block;
+            margin-left: @spacing10;
+            vertical-align: middle;
+            display: none;
+            margin-top: @spacing10;
+        }
     }
 }
 
@@ -111,6 +138,9 @@
         .contactus-section-wrap{
             .contact-address, .contactus-form{
                 padding: @spacing70 @spacing35;
+            }
+            .contact-address{
+                min-height: @contact-tablet-height;
             }
             .inline-input-elm{
                 display: block;
@@ -160,6 +190,12 @@
                 position: relative;
                 left: 50%;
                 .translateX(-50%);
+            }
+            .ajax-loader{
+                position: relative;
+                left: 50%;
+                .translateX(-50%);
+                margin-top: @spacing10;
             }
         }
     }
