@@ -76,4 +76,8 @@ $(document).ready(function () {
 
     var scroll = new BackgroundScroll();
     // scroll.init();
+
+    $("#contactusForm").click(function(){
+        console.log('clicked');
+    });
 });

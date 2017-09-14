@@ -11,15 +11,8 @@ var commonFunctions = {
         }
 
     },
-    ajaxWithoutToken: function (params, url, type) {
-        if (type == 'post' || type == 'delete') {
-            params = {};
-        } else {
-            params = JSON.stringify(params);
-        }
-    },
     //ajax call with token in the header
-    reqWithoutToken = function (type, apiUrl, paramData) {
+    ajaxWithoutToken: function (type, apiUrl, paramData) {
         // jquery promise object
         var promiseObj = $.Deferred();
         $.support.cors = true;
