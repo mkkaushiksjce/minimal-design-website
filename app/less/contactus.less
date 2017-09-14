@@ -77,6 +77,10 @@
             &:last-child{
                 margin-bottom: 0;
             }
+            textarea{
+                min-height: @text-area-height;
+                line-height: @spacing20;
+            }
         }
         .block-input-elm{
             max-width: 385px;
@@ -91,6 +95,12 @@
             max-width: 178px;
             &:first-child{
                 margin-right: auto; 
+            }
+        }
+        .captcha-wrap{
+            margin-bottom: @spacing25;
+            label{
+                .font-generic(@fs16, 'sans-bold', @contact-elm-color);
             }
         }
     }
