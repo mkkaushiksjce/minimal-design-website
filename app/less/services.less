@@ -1,0 +1,89 @@
+@import (reference) './file_imports.less';
+
+@services-line-height: 1.9;
+
+#companyWebsiteWrap {
+    .services-section-wrap{
+        min-height: 100vh;
+        height: 100%;
+        padding: @spacing100 0;
+        background-color: @theme-color;
+        opacity: 0.8;
+        z-index: 0;
+        background: url("../common/images/bg/watter-fall.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+
+        .serive-title-wrap{
+            margin-bottom: @spacing70;
+            text-align: center;
+        }
+
+        .services-title{
+            .font-generic(@fs28, 'sans-bold', @white);
+        }
+
+        .services-subtitle{
+             .font-generic(@fs15, 'sans-regular', @white);
+             margin-top: @spacing15;
+        }
+        .service{
+            width: 30%;
+            display: inline-block;
+            margin: 0 1.5%;
+            min-height: 150px;
+            height: 100%;
+            vertical-align: text-bottom;
+            margin-bottom: @spacing50;
+        }
+        .service-icon{
+            display: inline-block;
+            vertical-align: top;
+            color: @purchase-button-red;
+            width: 20%;
+            font-size: @fs24;
+        }
+        .service-description{
+            display: inline-block;
+            width: 75%;
+        }
+        .service-description-title{
+            .font-generic(@fs16, 'sans-bold', @white);
+            margin-bottom: @spacing15;
+            text-transform: capitalize;
+        }
+        .service-description-subtile{
+            .font-generic(@fs13, 'sans-regular', @services-description-color);
+            line-height: @services-line-height;
+        }
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+    #companyWebsiteWrap {
+        .services-section-wrap {
+            .service{
+                width: 45%;
+            }
+            .service-description-subtile{
+                font-size: @fs13;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px){
+    #companyWebsiteWrap {
+        .services-section-wrap {
+            padding: @spacing50 @spacing20;
+
+            .service{
+                width: 100%;
+            }
+        }
+
+    }
+}

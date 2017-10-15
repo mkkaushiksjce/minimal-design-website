@@ -1,2 +1,2 @@
-# Sushupti_Landing_Page
+# Minimal design website 
 Minimal design website.
