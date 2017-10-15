@@ -14,6 +14,7 @@ var handlebars = require('gulp-compile-handlebars');
 /*** configuration values ***/
 var WORKPATH = config.WORKPATH,
     BUILDPATH = config.BUILDPATH,
+    APPPATH = config.APPPATH,
     PRODUCTIONBUILDPATH = config.PRODUCTIONBUILDPATH,
     GITROOT = "../../",
     URLREGEX = /root\/(.*?)(\.png|\.jpg|\.gif|\.woff|\.woff2|\.otf|\.ttf|\.eot|\.html|\.css|\.js|\.svg|\.ico)/gmi,
@@ -38,7 +39,9 @@ var lessConfig = {
         WORKPATH + "less/home_page.less",
         WORKPATH + "less/contactus.less",
         WORKPATH + "less/services.less",
-        WORKPATH + "less/footer.less"
+        WORKPATH + "less/footer.less",
+        WORKPATH + "less/carousel.less",
+        WORKPATH + "less/loader.less"
     ],
     dest: "css",
     destFile: "main.css"
@@ -54,10 +57,13 @@ var scriptLibraryConfig = {
 };
 var scriptAppConfig = {
     files: [
+        APPPATH + "config/client_config.js",
+        WORKPATH + "js/base.js",
         WORKPATH + "js/common.js",
         WORKPATH + "js/app.js",
         WORKPATH + "js/scroll.js",
-        WORKPATH + "js/contactus.js"
+        WORKPATH + "js/contactus.js",
+        WORKPATH + "js/api_service.js"
     ],
     dest: "js",
     destFile: "main.js"

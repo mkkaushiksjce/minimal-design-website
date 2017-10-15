@@ -24,18 +24,18 @@ $(document).ready(function () {
 
         currScroll = $(this).scrollTop();
 
-        if (currScroll > lastScrollTop) {
-            scrollDirection = 'bottom';
-             offset = $(".services-section-wrap").offset().top - servicePadding ;
-            //  offset = $(".services-section-wrap").offset().top - servicePadding - $(".navbar-wrap").height();
-        } else {
-            scrollDirection = 'top';
-            offset = $(".services-section-wrap").offset().top - servicePadding;
-        }
-        lastScrollTop = currScroll;
+        // if (currScroll > lastScrollTop) {
+        //     scrollDirection = 'bottom';
+        //     offset = $(".services-section-wrap").offset().top - servicePadding;
+        //     //  offset = $(".services-section-wrap").offset().top - servicePadding - $(".navbar-wrap").height();
+        // } else {
+        //     scrollDirection = 'top';
+        //     offset = $(".services-section-wrap").offset().top - servicePadding;
+        // }
+        // lastScrollTop = currScroll;
 
         $("html, body").animate({
-            scrollTop: offset
+            scrollTop: $(".services-section-wrap").offset().top + $(".navbar-wrap").height() - servicePadding
         }, scrollDelay);
     });
 
@@ -48,14 +48,32 @@ $(document).ready(function () {
         }, scrollDelay);
     });
 
-    function backgroundScroll(bgScrollParams) {
-        // 1 pixel row at a time
-        bgScrollParams.current -= 1;
+    var BackgroundScroll = function (params) {
+        params = $.extend({
+            scrollSpeed: bgScrollParams.scrollspeed,
+            imageWidth: $('.home-section-wrap').width(),
+            imageHeight: $('.home-section-wrap').height()
+        }, params);
 
-        // move the background with backgrond-position css properties
-        $('div.clouds').css("backgroundPosition", (bgScrollParams.direction == 'horizontal') ? bgScrollParams.current + "px 0" : "0 " + bgScrollParams.current + "px");
-    }
+        var step = 1,
+            current = 0,
+            restartPosition = -(params.imageWidth - params.imageHeight);
 
-    //Calls the scrolling function repeatedly
-    //  setInterval(bgscroll, scrollSpeed);  
+        var scroll = function () {
+            current -= step;
+            if (current == restartPosition) {
+                current = 0;
+            }
+            $('.home-section-wrap').css('backgroundPosition', (current > restartPosition ? 0: current) + 'px 0');
+
+        };
+
+        this.init = function () {
+            setInterval(scroll, params.scrollSpeed);
+
+        };
+    };
+
+    var scroll = new BackgroundScroll();
+    // scroll.init();
 });
