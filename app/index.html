@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Simple template based website">
     <meta name="author" content="Kaushik M.K. - https://github.com/mkkaushiksjce">
-    <title>CompanyName</title>
+    <title>LAST SPRINT</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -117,16 +117,22 @@
         <div class="contactus-form">
             <div class="contactus-wrapper">
                 <div class="contact-form-elm">
-                    <input placeholder="Name" type="text" class="inline-input-elm">
-                    <input placeholder="Email" type="text" class="inline-input-elm">
+                    <input id="name" placeholder="Name" type="text" class="inline-input-elm">
+                    <input id="email" placeholder="Email" type="text" class="inline-input-elm">
                 </div>
                 <div class="contact-form-elm">
-                    <input placeholder="Subject" type="text" class="block-input-elm">
+                    <input id="subject" placeholder="Subject" type="text" class="block-input-elm">
                 </div>
                 <div class="contact-form-elm">
-                    <textarea placeholder="Message" id="formMessage" class="block-input-elm"></textarea>
+                    <textarea id="message" placeholder="Message" id="formMessage" class="block-input-elm"></textarea>
                 </div>
-                <div id="contactusForm" class="button">SEND MAIL</div>
+                <div class="captcha-wrap">
+                    <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                    <label class="captcha" for="styled-checkbox-1">I'm not a robot</label>
+                </div>
+                <div id="contactusForm" class="button">SEND MAIL</div><div class="ajax-loader"></div>
+                <div class="ajax-message"></div>
+                <div class="validation-message"></div>
             </div>
         </div>
     </div>

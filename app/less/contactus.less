@@ -3,12 +3,14 @@
 @contact-circle-dimensions: 35px;
 @text-area-height: 120px;
 @contact-min-height: 550px;
+@contact-tablet-height: 580px;
 
 #companyWebsiteWrap {
 
     .contactus-wrapper{
         max-width: @viewport-width/2;
         height: 100%;
+        margin: 0 auto;
     }
     .contactus-section-wrap{
         height: 100%;
@@ -76,10 +78,15 @@
             &:last-child{
                 margin-bottom: 0;
             }
+            textarea{
+                min-height: @text-area-height;
+                line-height: @spacing20;
+            }
         }
         .block-input-elm{
             max-width: 385px;
             width: 100%;
+            display: block;
         }
         #formMessage{
             min-height: @text-area-height;
@@ -88,8 +95,40 @@
             width: 45%;
             max-width: 178px;
             &:first-child{
-                margin-right: @spacing20;
+                margin-right: auto; 
             }
+        }
+        .captcha-wrap{
+            margin-bottom: @spacing25;
+            label{
+                .font-generic(@fs16, 'sans-bold', @contact-elm-color);
+            }
+        }
+        .ajax-message{
+            background: @theme-color;
+            height: @spacing40;
+            line-height: @spacing40;
+            display: none;
+            width: 100%;
+            margin-top: @spacing20;
+            padding: 0 @spacing10;
+            .font-generic(@fs16, 'sans-regular', @white);
+            text-align: center;
+        }
+        .ajax-loader-wrap{
+            display: block;
+            width: 120px;
+        }
+        .ajax-loader{
+            background: url("../common/images/loader/loader.gif");
+            background-repeat: no-repeat;
+            height: @spacing35;
+            width: @spacing35;
+            display: inline-block;
+            margin-left: @spacing10;
+            vertical-align: middle;
+            display: none;
+            margin-top: @spacing10;
         }
     }
 }
@@ -100,11 +139,15 @@
             .contact-address, .contactus-form{
                 padding: @spacing70 @spacing35;
             }
+            .contact-address{
+                min-height: @contact-tablet-height;
+            }
             .inline-input-elm{
                 display: block;
                 width: 100%;
                 max-width: 385px;
                 margin-bottom: @spacing25;
+                
             }
             .contact-detail, .contact-detail-active{
                 width: 80%;
@@ -125,8 +168,15 @@
             .inline-input-elm{
                 display: block;
                 width: 100%;
+                margin: 0 auto;
                 max-width: 385px;
                 margin-bottom: @spacing25;
+                &:first-child{
+                    margin-right: auto;
+               }
+            }
+            .block-input-elm{
+                margin: 0 auto;
             }
             .contact-detail, .contact-detail-active{
                 width: 75%;
@@ -140,6 +190,12 @@
                 position: relative;
                 left: 50%;
                 .translateX(-50%);
+            }
+            .ajax-loader{
+                position: relative;
+                left: 50%;
+                .translateX(-50%);
+                margin-top: @spacing10;
             }
         }
     }

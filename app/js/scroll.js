@@ -7,6 +7,10 @@ var scrollSpeed = 70;
 var current = 0;
 // set the direction
 var direction = 'h';
+var whiteLogo = "../common/images/logo/logo_white.png";
+var colorLogo = "../common/images/logo/logo_color.png";
+var whiteLogoUrl = 'url(' + whiteLogo + ')';
+var colorLogoUrl = 'url(' + colorLogo + ')';
 
 function getCurrentScroll() {
     return window.pageYOffset || document.documentElement.scrollTop;
@@ -17,9 +21,11 @@ $(window).scroll(function () {
     var scroll = getCurrentScroll();
     if (scroll >= headerTop) {
         $('.navbar-wrap').addClass('header-fixed');
+        $('.logo-wrap').css('background-image', colorLogoUrl);
         navbarFixed = true;
     } else {
         $('.navbar-wrap').removeClass('header-fixed');
+        $('.logo-wrap').css('background-image', whiteLogoUrl);
         navbarFixed = false;
     }
 });
